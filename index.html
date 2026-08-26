@@ -1016,17 +1016,12 @@
     const input = document.getElementById('vendorPassInput');
     const error = document.getElementById('vendorPassError');
     if (input.value === VENDOR_PASSWORD) {
-      localStorage.setItem('navikaVendorUnlocked', 'yes');
       unlockVendorSection();
     } else {
       error.style.display = 'block';
       input.value = '';
       input.focus();
     }
-  }
-
-  if (localStorage.getItem('navikaVendorUnlocked') === 'yes') {
-    unlockVendorSection();
   }
 
   function handleSubmit() {
