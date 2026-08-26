@@ -964,7 +964,11 @@
           <label for="msg">Describe the Problem</label>
           <textarea id="msg" placeholder="Instrument name, issue, preferred visit time…"></textarea>
         </div>
-        <button class="submit-btn" onclick="handleSubmit()">Submit Request →</button>
+        <button class="submit-btn" onclick="handleSubmit()">📱 Send via WhatsApp →</button>
+        <button class="submit-btn" onclick="sendViaEmail()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">📧 Or Send via Email</button>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem;text-align:center;">
+          Tapping a button above opens WhatsApp or your email app with the details already filled in — you just need to tap Send there to complete it.
+        </p>
       </div>
     </div>
   </div>
@@ -1024,7 +1028,7 @@
     }
   }
 
-  function handleSubmit() {
+  function getFormData() {
     const name    = document.getElementById('name').value.trim();
     const phone   = document.getElementById('phone').value.trim();
     const area    = document.getElementById('area').value;
@@ -1033,34 +1037,42 @@
 
     if (!name || !phone || !area || !service) {
       alert('Please fill in all required fields.');
-      return;
+      return null;
     }
 
     const digits = phone.replace(/\D/g, '');
     if (digits.length < 10) {
       alert('Please enter a valid phone number (at least 10 digits).');
-      return;
+      return null;
     }
 
-    // Send via WhatsApp
+    return { name, phone, area, service, msg };
+  }
+
+  function handleSubmit() {
+    const data = getFormData();
+    if (!data) return;
+
     const waText = encodeURIComponent(
       `*New Service Request — NAVIKA HOME SOLUTIONS*\n\n` +
-      `👤 Name: ${name}\n` +
-      `📞 Phone: ${phone}\n` +
-      `📍 Area: ${area}\n` +
-      `🔧 Service: ${service}\n` +
-      `📝 Details: ${msg || 'Not provided'}`
+      `👤 Name: ${data.name}\n` +
+      `📞 Phone: ${data.phone}\n` +
+      `📍 Area: ${data.area}\n` +
+      `🔧 Service: ${data.service}\n` +
+      `📝 Details: ${data.msg || 'Not provided'}`
     );
-    window.open(`https://wa.me/917988134257?text=${waText}`, '_blank');
+    window.location.href = `https://wa.me/917988134257?text=${waText}`;
+  }
 
-    // Also open email
-    const subject = encodeURIComponent(`Service Request from ${name} — ${area}`);
+  function sendViaEmail() {
+    const data = getFormData();
+    if (!data) return;
+
+    const subject = encodeURIComponent(`Service Request from ${data.name} — ${data.area}`);
     const body = encodeURIComponent(
-      `New Service Request\n\nName: ${name}\nPhone: ${phone}\nArea: ${area}\nService: ${service}\nDetails: ${msg || 'Not provided'}`
+      `New Service Request\n\nName: ${data.name}\nPhone: ${data.phone}\nArea: ${data.area}\nService: ${data.service}\nDetails: ${data.msg || 'Not provided'}`
     );
-    window.open(`mailto:pradeep150780.pandey@gmail.com?subject=${subject}&body=${body}`, '_blank');
-
-    alert(`Thank you, ${name}!\n\nYour request has been sent via WhatsApp and Email.\nWe will contact you at ${phone} shortly.`);
+    window.location.href = `mailto:pradeep150780.pandey@gmail.com?subject=${subject}&body=${body}`;
   }
 </script>
 </body>
