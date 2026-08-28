@@ -987,6 +987,11 @@
         </div>
         <button class="submit-btn" onclick="handleSubmit()">📱 Send via WhatsApp →</button>
         <button class="submit-btn" onclick="sendViaEmail()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">📧 Or Send via Email</button>
+        <button class="submit-btn" onclick="sendViaSMS()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">💬 Or Send via SMS (Message)</button>
+        <a href="tel:+917988134257" class="submit-btn" style="margin-top:.7rem;display:block;text-align:center;text-decoration:none;background:transparent;border:1px solid var(--amber);color:var(--amber);">☎️ No Internet? Give Us a Missed Call</a>
+        <p style="font-size:.76rem;color:var(--muted);margin-top:.6rem;text-align:center;">
+          Missed call karein aur call turant kaat dein — hum aapko wapas call karenge.
+        </p>
         <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem;text-align:center;">
           Tapping a button above opens WhatsApp or your email app with the details already filled in — you just need to tap Send there to complete it.
         </p>
@@ -1094,6 +1099,18 @@
       `New Service Request\n\nName: ${data.name}\nPhone: ${data.phone}\nArea: ${data.area}\nService: ${data.service}\nDetails: ${data.msg || 'Not provided'}`
     );
     window.location.href = `mailto:pradeep150780.pandey@gmail.com?subject=${subject}&body=${body}`;
+  }
+
+  function sendViaSMS() {
+    const data = getFormData();
+    if (!data) return;
+
+    // Keep it short — plain SMS has a length limit
+    const smsBody = encodeURIComponent(
+      `Navika Service Request: ${data.name}, ${data.phone}, ${data.area}, ${data.service}`
+    );
+    // Works on both Android (?) and iPhone (&) — Android is far more common in villages, so use ?
+    window.location.href = `sms:+917988134257?body=${smsBody}`;
   }
 </script>
 </body>
