@@ -1,1 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAVIKA HOME SOLUTIONS — Instrument Maintenance Experts | Patti, Pratapgarh</title>
+  <meta name="description" content="Certified electrical & mechanical instrument maintenance, calibration, and AMC services in Patti, Saifabad, Chanda, Dhakwa, Singramau and nearby areas of Pratapgarh district, UP. Same-day response, 24/7 emergency support."/>
+  <meta name="theme-color" content="#0B0F14"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
+  <link rel="apple-touch-icon" href="icon-192.png"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Navika"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B0F14'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23F5A623' font-family='sans-serif'%3E⚡%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="business.business"/>
+  <meta property="og:title" content="NAVIKA HOME SOLUTIONS — Instrument Maintenance Experts"/>
+  <meta property="og:description" content="Local electrical & mechanical instrument maintenance, calibration and emergency repair in Patti, Pratapgarh district, UP."/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "NAVIKA HOME SOLUTIONS",
+    "description": "Certified electrical & mechanical instrument maintenance, calibration and emergency repair services.",
+    "telephone": "+91-79881-34257",
+    "email": "pradeep150780.pandey@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Patti",
+      "addressLocality": "Pratapgarh",
+      "addressRegion": "UP",
+      "postalCode": "230001",
+      "addressCountry": "IN"
+    },
+    "areaServed": ["Patti", "Saifabad", "Chanda", "Dhakwa", "Singramau", "Lalganj", "Kunda", "Mandhata", "Sandwa"],
+    "openingHours": "Mo-Sa 08:00-19:00",
+    "priceRange": "$$"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:        #0B0F14;
+      --surface:   #131920;
+      --border:    #1E2A36;
+      --amber:     #F5A623;
+      --amber-dim: #7A4E0D;
+      --steel:     #A8C4D8;
+      --white:     #EDF2F7;
+      --muted:     #6B8899;
+      --danger:    #E84C4C;
+      --green:     #3DD68C;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(11,15,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { font-family: 'Syne', sans-serif; font-size: 1.2rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--amber); }
+    nav ul { list-style: none; display: flex; gap: 1.75rem; }
+    nav ul a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
+    nav ul a:hover { color: var(--white); }
+    .nav-cta { background: var(--amber); color: #0B0F14; padding: .5rem 1.2rem; border-radius: 4px; font-size: .85rem; font-weight: 700; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .85; }
+
+    .nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 5px; width: 40px; height: 36px; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .nav-toggle span { width: 18px; height: 2px; background: var(--white); transition: transform .2s, opacity .2s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .nav-toggle:focus-visible {
+      outline: 2px solid var(--amber); outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute; top: -100px; left: 1rem; z-index: 999;
+      background: var(--amber); color: #0B0F14; font-weight: 700;
+      padding: .6rem 1.1rem; border-radius: 6px; text-decoration: none;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* EMERGENCY */
+    .emergency { background: linear-gradient(90deg, #b91c1c, #dc2626); text-align: center; padding: .6rem 1rem; font-size: .82rem; font-weight: 600; letter-spacing: .03em; }
+    .emergency a { color: #fff; text-decoration: underline; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid; place-items: center;
+      padding: 8rem 2.5rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, var(--border) 39px, var(--border) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, var(--border) 39px, var(--border) 40px);
+      opacity: .2;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 55% at 50% 50%, rgba(245,166,35,0.1) 0%, transparent 70%);
+    }
+    .hero-inner { position: relative; z-index: 1; text-align: center; max-width: 820px; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: .35rem .9rem; border-radius: 99px;
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--amber);
+      margin-bottom: 2rem; letter-spacing: .05em;
+    }
+    .badge::before { content: '●'; font-size: .5rem; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+      font-weight: 800; line-height: 1.06; letter-spacing: -0.03em;
+      margin-bottom: 1.4rem;
+    }
+    h1 em { font-style: normal; color: var(--amber); }
+    .hero p { font-size: 1.1rem; color: var(--steel); max-width: 520px; margin: 0 auto 2.25rem; line-height: 1.75; }
+
+    .area-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2.25rem; }
+    .area-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: .7rem;
+      padding: .3rem .75rem; border-radius: 3px;
+      background: var(--bg); color: var(--steel);
+      border: 1px solid var(--border);
+    }
+    .area-tag.main { border-color: var(--amber); color: var(--amber); }
+
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--amber); color: #0B0F14; padding: .85rem 2rem; border-radius: 6px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: transform .15s, opacity .15s; }
+    .btn-primary:hover { transform: translateY(-2px); opacity: .9; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--white); padding: .85rem 2rem; border-radius: 6px; font-weight: 500; font-size: .95rem; text-decoration: none; transition: border-color .2s; }
+    .btn-ghost:hover { border-color: var(--steel); }
+
+    .stats-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--amber); line-height: 1; }
+    .stat-label { font-size: .78rem; color: var(--muted); margin-top: .3rem; }
+
+    /* SECTIONS */
+    section { padding: 5.5rem 2.5rem; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .12em; color: var(--amber); text-transform: uppercase; margin-bottom: .9rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.1rem; }
+    .section-intro { color: var(--steel); max-width: 500px; line-height: 1.7; font-size: .95rem; }
+
+    /* SERVICES */
+    #services { background: var(--surface); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.5px; background: var(--border); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .service-card { background: var(--surface); padding: 1.75rem; transition: background .2s; }
+    .service-card:hover { background: #18232D; }
+    .svc-icon { width: 44px; height: 44px; background: var(--bg); border: 1px solid var(--border); border-radius: 7px; display: grid; place-items: center; margin-bottom: 1.1rem; font-size: 1.3rem; }
+    .svc-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: .4rem; }
+    .svc-desc { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+    .svc-tag { display: inline-block; margin-top: .9rem; font-family: 'JetBrains Mono', monospace; font-size: .68rem; padding: .2rem .55rem; border-radius: 3px; background: var(--bg); color: var(--amber); border: 1px solid var(--amber-dim); }
+
+    /* COVERAGE */
+    #coverage { }
+    .coverage-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; max-width: 1100px; margin: 0 auto; }
+
+    .area-list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: .75rem; }
+    .area-item {
+      display: flex; align-items: center; gap: .9rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: .85rem 1rem;
+      transition: border-color .2s;
+    }
+    .area-item:hover { border-color: var(--amber); }
+    .area-item.primary { border-color: var(--amber-dim); }
+    .area-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
+    .area-item.primary .area-dot { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+    .area-name { font-weight: 600; font-size: .95rem; }
+    .area-note { font-size: .78rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-left: auto; }
+
+    .map-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2rem;
+      position: sticky; top: 6rem;
+    }
+    .map-title { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--amber); letter-spacing: .1em; margin-bottom: 1.25rem; }
+    .map-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: .4rem; margin-bottom: 1.25rem;
+    }
+    .map-cell {
+      aspect-ratio: 1; border-radius: 4px;
+      background: var(--bg); border: 1px solid var(--border);
+      display: grid; place-items: center;
+      font-size: .55rem; color: var(--muted); text-align: center;
+      line-height: 1.2; padding: .2rem;
+      transition: background .2s, border-color .2s;
+    }
+    .map-cell.lit { background: rgba(245,166,35,0.12); border-color: var(--amber-dim); color: var(--amber); font-weight: 600; }
+    .map-cell.hq { background: rgba(245,166,35,0.25); border-color: var(--amber); color: var(--amber); }
+
+    .map-legend { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: .4rem; font-size: .72rem; color: var(--muted); }
+    .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+    /* PROCESS */
+    #process { background: var(--surface); }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2rem; margin-top: 2.75rem; }
+    .process-step { padding-left: 1.4rem; border-left: 2px solid var(--border); }
+    .process-step.active { border-left-color: var(--amber); }
+    .step-num { font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--amber); letter-spacing: .1em; margin-bottom: .5rem; }
+    .step-title { font-weight: 600; font-size: .95rem; margin-bottom: .35rem; }
+    .step-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* INSTRUMENTS */
+    #instruments { }
+    .inst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .9rem; margin-top: 2.25rem; }
+    .inst-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1.1rem; transition: border-color .2s, transform .2s; }
+    .inst-card:hover { border-color: var(--amber); transform: translateY(-3px); }
+    .inst-card .icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .inst-card .name { font-weight: 600; font-size: .875rem; }
+    .inst-card .type { font-family: 'JetBrains Mono', monospace; font-size: .65rem; color: var(--muted); margin-top: .2rem; }
+
+    /* CONTACT */
+    #contact { background: var(--surface); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.75rem; }
+    .contact-item { display: flex; gap: .9rem; align-items: flex-start; }
+    .ci-icon { width: 38px; height: 38px; flex-shrink: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; display: grid; place-items: center; font-size: 1rem; }
+    .ci-label { font-size: .72rem; color: var(--muted); margin-bottom: .1rem; }
+    .ci-value { font-weight: 600; font-size: .9rem; }
+
+    .contact-form { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.75rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .field { display: flex; flex-direction: column; gap: .35rem; }
+    label { font-size: .78rem; color: var(--muted); font-weight: 500; }
+    input, select, textarea { background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: .65rem .85rem; color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: .875rem; outline: none; transition: border-color .2s; }
+    input:focus, select:focus, textarea:focus { border-color: var(--amber); }
+    textarea { resize: vertical; min-height: 90px; }
+    select option { background: var(--bg); }
+    .submit-btn { background: var(--amber); color: #0B0F14; padding: .8rem 2rem; border-radius: 6px; font-weight: 700; font-size: .92rem; border: none; cursor: pointer; transition: opacity .2s; align-self: flex-start; }
+    .submit-btn:hover { opacity: .85; }
+
+    /* WHATSAPP FLOAT */
+    .wa-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200;
+      background: #25D366; color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 1.6rem; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* FOOTER */
+    footer { padding: 2.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem; }
+    footer p { color: var(--muted); font-size: .82rem; }
+    .footer-logo { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; }
+    .footer-logo span { color: var(--amber); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      nav ul {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: rgba(11,15,20,0.98); backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        max-height: 0; overflow: hidden; opacity: 0;
+        transition: max-height .25s ease, opacity .2s ease;
+      }
+      nav ul.open { max-height: 60vh; opacity: 1; }
+      nav ul li { width: 100%; }
+      nav ul a { display: block; padding: .9rem 2rem; border-top: 1px solid var(--border); }
+      .nav-cta { display: none; }
+      .coverage-inner, .contact-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 7rem 1.25rem 3rem; }
+      section { padding: 4rem 1.25rem; }
+      .map-box { position: static; }
+    }
+    @media (prefers-reduced-motion: reduce) { .badge::before { animation: none; } }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="emergency">
+  🔴 Emergency Breakdown? Call Now: <a href="tel:+917988134257" style="font-size:1.15rem;font-weight:800;letter-spacing:.02em;">+91 79881 34257</a> — Available 24/7 <span style="opacity:.85;">| 24 घंटे उपलब्ध</span>
+</div>
+
+<nav>
+  <div class="logo">NAVIKA <span>HOME SOLUTIONS</span></div>
+  <ul id="navMenu">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#instruments">Instruments</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#vendorLock">Partners</a></li>
+    <li><a href="#vendorLock">Directory</a></li>
+    <li><a href="#trackerLock">Tracker</a></li>
+    <li><a href="#app-download">Get App</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Service</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="main">
+  <div class="hero-inner">
+    <div class="badge">Serving Patti · Saifabad · Chanda · Dhakwa · Singramau</div>
+    <h1>Local Experts for<br/><em>Every Instrument</em><br/>You Rely On</h1>
+    <p>Certified electrical & mechanical instrument maintenance right in your area — Patti, Saifabad, Chanda, Dhakwa, Singramau and surrounding localities of Pratapgarh district.</p>
+    <p style="color:var(--muted);font-size:.9rem;margin-top:-.5rem;">पट्टी, सैफाबाद, चंदा, ढकवा, सिंगरामऊ व आस-पास — भरोसेमंद इलेक्ट्रिकल-मैकेनिकल इंस्ट्रूमेंट सर्विस, आपके घर के पास</p>
+
+    <div class="area-tags">
+      <span class="area-tag main">Patti</span>
+      <span class="area-tag main">Saifabad</span>
+      <span class="area-tag main">Chanda</span>
+      <span class="area-tag main">Dhakwa</span>
+      <span class="area-tag main">Singramau</span>
+      <span class="area-tag">Lalganj</span>
+      <span class="area-tag">Kunda</span>
+      <span class="area-tag">Mandhata</span>
+      <span class="area-tag">& nearby areas</span>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book a Service Call <span style="font-size:.8em;opacity:.85;">| सर्विस बुक करें</span></a>
+      <a href="https://wa.me/917988134257" class="btn-ghost">💬 WhatsApp Us</a>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat"><div class="stat-num">800+</div><div class="stat-label">Instruments Serviced Locally</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Core Areas Covered</div></div>
+      <div class="stat"><div class="stat-num">Same Day</div><div class="stat-label">Local Response</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Emergency Support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACCESS MENU -->
+<section id="quick-menu" style="max-width:1000px;margin:0 auto;padding:2.5rem 2.5rem 0;">
+  <div style="text-align:center;margin-bottom:1.2rem;">
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;">Quick Access</h2>
+    <p style="color:var(--muted);font-size:.85rem;">जल्दी पहुँचें — Everything one tap away</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.8rem;">
+    <button onclick="callUsNow()" class="qm-btn" style="border-color:var(--amber);">
+      <span class="qm-icon">📞</span>
+      <span class="qm-en">Call Now</span>
+      <span class="qm-hi">अभी कॉल करें</span>
+    </button>
+    <a href="https://wa.me/917988134257" class="qm-btn">
+      <span class="qm-icon">💬</span>
+      <span class="qm-en">WhatsApp</span>
+      <span class="qm-hi">व्हाट्सएप करें</span>
+    </a>
+    <a href="#contact" class="qm-btn">
+      <span class="qm-icon">🔧</span>
+      <span class="qm-en">Book Service</span>
+      <span class="qm-hi">सर्विस बुक करें</span>
+    </a>
+    <a href="#app-download" class="qm-btn">
+      <span class="qm-icon">📱</span>
+      <span class="qm-en">Get App</span>
+      <span class="qm-hi">ऐप डाउनलोड करें</span>
+    </a>
+    <a href="#vendorLock" class="qm-btn">
+      <span class="qm-icon">🤝</span>
+      <span class="qm-en">Partners & Directory</span>
+      <span class="qm-hi">वेंडर लिस्ट</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .qm-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: .25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem .6rem; text-decoration: none; cursor: pointer; transition: border-color .2s, transform .15s;
+    font-family: inherit;
+  }
+  .qm-btn:hover { border-color: var(--amber); transform: translateY(-2px); }
+  .qm-icon { font-size: 1.6rem; }
+  .qm-en { color: var(--white); font-weight: 700; font-size: .82rem; text-align: center; }
+  .qm-hi { color: var(--muted); font-size: .72rem; text-align: center; }
+</style>
+
+<!-- APP DOWNLOAD -->
+<section id="app-download" style="max-width:900px;margin:0 auto;padding:3.5rem 2.5rem;">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem 2rem;text-align:center;">
+    <div style="font-size:2.2rem;margin-bottom:.5rem;">📱</div>
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;margin-bottom:.6rem;">Download Our App</h2>
+    <p style="color:var(--muted);font-size:.92rem;max-width:480px;margin:0 auto 1.5rem;">
+      Get the NAVIKA HOME SOLUTIONS app on your Android phone for faster access — book services, browse partners, and reach us anytime, right from your home screen.
+    </p>
+    <a href="https://github.com/pradeep150780pandey-png/-navika-home-solutions/releases/download/v1.0/Navika.Home.Solutions.apk" class="submit-btn" style="display:inline-block;text-decoration:none;max-width:320px;">⬇️ Download App (APK)</a>
+    <p style="color:var(--muted);font-size:.78rem;margin-top:1rem;">
+      Not from Play Store — your phone may show an "Unknown source" warning during install. Tap <b>Install anyway</b> to continue; the app is safe.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="services-header">
+      <div>
+        <div class="section-label">// What We Do</div>
+        <h2>Maintenance Services<br/>We Offer Locally</h2>
+      </div>
+      <p class="section-intro">All services performed by certified engineers based in the Pratapgarh area — no long waits, no city-level delays.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-icon">⚡</div>
+        <div class="svc-title">Electrical Instrument Maintenance</div>
+        <div class="svc-desc">Inspection, testing & repair of voltmeters, ammeters, energy meters, power analyzers, and switchgear panels.</div>
+        <div class="svc-tag">ELECTRICAL</div>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">⚙️</div>
+        <div class="svc-title">Mechanical Instrument Maintenance</div>
+        <div class="svc-desc">Servicing of pressure gauges, flow meters, torque tools, weighing scales, and mechanical measuring instruments.</div>
+        <div class="svc-tag">MECHANICAL</div>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-title">Calibration & Certification</div>
+        <div class="svc-desc">Traceable calibration with proper certificates — useful for factories, sugar mills, pump stations, and cold storage.</div>
+        <div class="svc-tag">CALIBRATION</div>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">📋</div>
+        <div class="svc-title">Annual Maintenance Contract</div>
+        <div class="svc-desc">Scheduled visits, performance logs, and preventive maintenance — ideal for small factories and agri-processing units.</div>
+        <div class="svc-tag">AMC</div>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🚨</div>
+        <div class="svc-title">Emergency Breakdown Service</div>
+        <div class="svc-desc">Same-day response for critical failures in Patti, Saifabad, Chanda, Dhakwa, and Singramau areas.</div>
+        <div class="svc-tag">EMERGENCY</div>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🔍</div>
+        <div class="svc-title">On-Site Inspection & Report</div>
+        <div class="svc-desc">We visit your site, assess all instruments, and give you a written condition report with recommendations.</div>
+        <div class="svc-tag">INSPECTION</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage">
+  <div class="coverage-inner">
+    <div>
+      <div class="section-label">// Service Area</div>
+      <h2>Based in Pratapgarh,<br/>Serving Your Locality</h2>
+      <p class="section-intro">We are locally based and cover these areas with fast on-site response. No more waiting for engineers from Lucknow or Allahabad.</p>
+
+      <div class="area-list">
+        <div class="area-item primary">
+          <div class="area-dot"></div>
+          <div>
+            <div class="area-name">Patti</div>
+            <div style="font-size:.78rem;color:var(--muted);">Primary service hub</div>
+          </div>
+          <div class="area-note">HQ AREA</div>
+        </div>
+        <div class="area-item primary">
+          <div class="area-dot"></div>
+          <div class="area-name">Saifabad</div>
+          <div class="area-note">CORE ZONE</div>
+        </div>
+        <div class="area-item primary">
+          <div class="area-dot"></div>
+          <div class="area-name">Chanda</div>
+          <div class="area-note">CORE ZONE</div>
+        </div>
+        <div class="area-item primary">
+          <div class="area-dot"></div>
+          <div class="area-name">Dhakwa</div>
+          <div class="area-note">CORE ZONE</div>
+        </div>
+        <div class="area-item primary">
+          <div class="area-dot"></div>
+          <div class="area-name">Singramau</div>
+          <div class="area-note">CORE ZONE</div>
+        </div>
+        <div class="area-item">
+          <div class="area-dot"></div>
+          <div class="area-name">Lalganj</div>
+          <div class="area-note">NEARBY</div>
+        </div>
+        <div class="area-item">
+          <div class="area-dot"></div>
+          <div class="area-name">Kunda</div>
+          <div class="area-note">NEARBY</div>
+        </div>
+        <div class="area-item">
+          <div class="area-dot"></div>
+          <div class="area-name">Mandhata</div>
+          <div class="area-note">NEARBY</div>
+        </div>
+        <div class="area-item">
+          <div class="area-dot"></div>
+          <div class="area-name">Sandwa</div>
+          <div class="area-note">NEARBY</div>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;font-size:.82rem;color:var(--muted);">Not listed? Call us — we often cover surrounding villages and gram sabhas too.</p>
+    </div>
+
+    <div class="map-box">
+      <div class="map-title">// LOCAL AREA MAP — PRATAPGARH</div>
+      <div class="map-grid">
+        <div class="map-cell"></div>
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Kunda</div>
+        <div class="map-cell"></div>
+        <div class="map-cell"></div>
+
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Sandwa</div>
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Singramau</div>
+        <div class="map-cell"></div>
+
+        <div class="map-cell lit">Saifabad</div>
+        <div class="map-cell"></div>
+        <div class="map-cell hq">Patti</div>
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Dhakwa</div>
+
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Mandhata</div>
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Chanda</div>
+        <div class="map-cell"></div>
+
+        <div class="map-cell"></div>
+        <div class="map-cell"></div>
+        <div class="map-cell lit">Lalganj</div>
+        <div class="map-cell"></div>
+        <div class="map-cell"></div>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--amber)"></div> HQ — Patti</div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(245,166,35,.4);border:1px solid var(--amber-dim)"></div> Served Areas</div>
+      </div>
+      <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);">
+        <div style="font-size:.78rem;color:var(--muted);line-height:1.7;">
+          📍 Pratapgarh District, Uttar Pradesh<br/>
+          All areas within ~30 km radius of Patti covered on same day.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENTS -->
+<section id="instruments" style="max-width:1100px;margin:0 auto;padding:5.5rem 2.5rem;">
+  <div class="section-label">// Equipment We Handle</div>
+  <h2>Instruments We Service</h2>
+  <p class="section-intro">Commonly found in local factories, pump houses, cold storage, sugar mills, and agri-processing units of the Pratapgarh area.</p>
+  <div class="inst-grid">
+    <div class="inst-card"><div class="icon">⚡</div><div class="name">Energy Meters</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">📊</div><div class="name">Pressure Gauges</div><div class="type">MECHANICAL</div></div>
+    <div class="inst-card"><div class="icon">🌡️</div><div class="name">Temperature Sensors</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">💧</div><div class="name">Flow Meters</div><div class="type">MECHANICAL</div></div>
+    <div class="inst-card"><div class="icon">⚖️</div><div class="name">Weighing Scales</div><div class="type">MECHANICAL</div></div>
+    <div class="inst-card"><div class="icon">🔋</div><div class="name">Power Analyzers</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">🎛️</div><div class="name">Control Panels</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">🔩</div><div class="name">Torque Wrenches</div><div class="type">MECHANICAL</div></div>
+    <div class="inst-card"><div class="icon">📡</div><div class="name">Transmitters</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">📏</div><div class="name">Manometers</div><div class="type">MECHANICAL</div></div>
+    <div class="inst-card"><div class="icon">💡</div><div class="name">Lux Meters</div><div class="type">ELECTRICAL</div></div>
+    <div class="inst-card"><div class="icon">🕐</div><div class="name">Tachometers</div><div class="type">MECHANICAL</div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label">// How It Works</div>
+    <h2>Simple. Local. Fast.</h2>
+    <p class="section-intro">Because we're based right here in your area, the process is quicker than any city-based service provider.</p>
+    <div class="process-steps">
+      <div class="process-step active">
+        <div class="step-num">STEP 01</div>
+        <div class="step-title">Call or WhatsApp Us</div>
+        <div class="step-desc">Tell us your area, instrument type, and problem. We respond within the hour during working hours.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">STEP 02</div>
+        <div class="step-title">Same-Day Visit</div>
+        <div class="step-desc">For Patti, Saifabad, Chanda, Dhakwa, and Singramau — our engineer arrives the same day in most cases.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">STEP 03</div>
+        <div class="step-title">Repair & Calibration</div>
+        <div class="step-desc">On-site diagnosis and repair. Calibration against certified reference standards where required.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">STEP 04</div>
+        <div class="step-title">Report & Follow-Up</div>
+        <div class="step-desc">You receive a service report. We follow up after 7 days to confirm the instrument is working properly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENDOR & DIRECTORY LOCK -->
+<div id="vendorLock" style="max-width:480px;margin:5rem auto;padding:2.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
+  <div style="font-size:2rem;margin-bottom:.5rem;">🔒</div>
+  <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:.5rem;">Vendor &amp; Directory — Private</h3>
+  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;">This section is password-protected. Enter the password to view vendor listings and local contacts.</p>
+  <input type="password" id="vendorPassInput" placeholder="Enter password" style="width:100%;padding:.7rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:.9rem;margin-bottom:.8rem;" onkeydown="if(event.key==='Enter') checkVendorPassword()"/>
+  <button onclick="checkVendorPassword()" style="width:100%;padding:.7rem 1rem;background:var(--amber);color:#0B0F14;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:.9rem;">Unlock</button>
+  <p id="vendorPassError" style="display:none;color:#e05555;font-size:.8rem;margin-top:.8rem;">❌ Wrong password, try again.</p>
+</div>
+
+<div id="vendorProtected" style="display:none;">
+
+<!-- PARTNERS -->
+<section id="partners" style="max-width:1100px;margin:0 auto;padding:5.5rem 2.5rem;">
+  <div class="section-label">// Trusted Local Network</div>
+  <h2>Our Nearby Business Partners</h2>
+  <p class="section-intro">We work closely with these trusted local businesses in the Patti, Saifabad, Chanda, Dhakwa, and Singramau area. Reach out to them directly for related needs.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:2.5rem;">
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">🏪</div>
+        <div class="partner-badge">PATTI</div>
+      </div>
+      <div class="partner-name">Monu Electricals</div>
+      <div class="partner-type">Electrical Parts & Supplies</div>
+      <div class="partner-desc">Electrical shop opposite Ramraj Inter College in Patti — components, wiring, and switchgear.</div>
+      <div class="partner-contact">
+        <span class="partner-placeholder">📞 Ask us for contact</span>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">🔧</div>
+        <div class="partner-badge">SAIFABAD</div>
+      </div>
+      <div class="partner-name">Gupta Hardware & Tools</div>
+      <div class="partner-type">Hardware & Mechanical Tools</div>
+      <div class="partner-desc">Trusted hardware shop near Saifabad with tools, fasteners, and workshop supplies for local industries.</div>
+      <div class="partner-contact">
+        <span class="partner-placeholder">📞 Ask us for contact</span>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">🏭</div>
+        <div class="partner-badge">CHANDA</div>
+      </div>
+      <div class="partner-name">Singh Agro Machinery</div>
+      <div class="partner-type">Agri Equipment & Services</div>
+      <div class="partner-desc">Agri-processing machinery dealer and service partner serving farms and mills around Chanda area.</div>
+      <div class="partner-contact">
+        <span class="partner-placeholder">📞 Ask us for contact</span>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">⚡</div>
+        <div class="partner-badge">DHAKWA</div>
+      </div>
+      <div class="partner-name">Verma Electrical Works</div>
+      <div class="partner-type">Electrical Installation & Repair</div>
+      <div class="partner-desc">Experienced electricians handling wiring, panel installation, and pump house electrical work near Dhakwa.</div>
+      <div class="partner-contact">
+        <span class="partner-placeholder">📞 Ask us for contact</span>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">🛢️</div>
+        <div class="partner-badge">SINGRAMAU</div>
+      </div>
+      <div class="partner-name">Yadav Industrial Traders</div>
+      <div class="partner-type">Industrial Goods & Spare Parts</div>
+      <div class="partner-desc">Wholesale and retail supplier of industrial goods, lubricants, and spare parts serving the Singramau belt.</div>
+      <div class="partner-contact">
+        <span class="partner-placeholder">📞 Ask us for contact</span>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">💡</div>
+        <div class="partner-badge">SAIFABAD</div>
+      </div>
+      <div class="partner-name">Shivam Electronics</div>
+      <div class="partner-type">Electronics & Appliance Sales</div>
+      <div class="partner-desc">Local electronics store in Saifabad for appliances, components, and accessories.</div>
+      <div class="partner-contact">
+        <a href="tel:+919792194423">📞 +91 97921 94423</a>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">📹</div>
+        <div class="partner-badge">PATTI</div>
+      </div>
+      <div class="partner-name">Camera Installation & Services</div>
+      <div class="partner-type">CCTV Sales, Installation & Repair</div>
+      <div class="partner-desc">CCTV camera installation, setup, and maintenance services in the Patti area.</div>
+      <div class="partner-contact">
+        <a href="tel:+919839207569">📞 +91 98392 07569</a>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">💧</div>
+        <div class="partner-badge">SAIFABAD</div>
+      </div>
+      <div class="partner-name">Sachin Jodha — Water Supply & RO</div>
+      <div class="partner-type">RO Water Purifier Sales & Service</div>
+      <div class="partner-desc">Water supply and RO purifier installation, repair, and maintenance in the Saifabad area.</div>
+      <div class="partner-contact">
+        <a href="tel:+919453848546">📞 +91 94538 48546</a>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">🎂</div>
+        <div class="partner-badge">SAIFABAD</div>
+      </div>
+      <div class="partner-name">Cake & Sweets</div>
+      <div class="partner-type">Bakery & Sweets Shop</div>
+      <div class="partner-desc">Fresh cakes and sweets for celebrations, in the Saifabad area.</div>
+      <div class="partner-contact">
+        <a href="tel:+919918635318">📞 +91 99186 35318</a>
+      </div>
+    </div>
+
+    <div class="partner-card">
+      <div class="partner-top">
+        <div class="partner-icon">📷</div>
+        <div class="partner-badge">SAIFABAD</div>
+      </div>
+      <div class="partner-name">Cameraman</div>
+      <div class="partner-type">Photography & Videography</div>
+      <div class="partner-desc">Event photography and videography services in the Saifabad area.</div>
+      <div class="partner-contact">
+        <a href="tel:+919565514269">📞 +91 95655 14269</a>
+      </div>
+    </div>
+
+    <div class="partner-card" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:180px;">
+      <div style="font-size:1.8rem;margin-bottom:.75rem;">➕</div>
+      <div class="partner-name" style="font-size:.95rem;">List Your Business Here</div>
+      <div class="partner-desc" style="margin-top:.4rem;">Are you a local vendor or service provider? Get listed in our partner network.</div>
+      <a href="#contact" style="margin-top:1rem;font-size:.78rem;color:var(--amber);font-family:'JetBrains Mono',monospace;text-decoration:none;">CONTACT US →</a>
+    </div>
+
+  </div>
+
+  <p style="margin-top:1.5rem;font-size:.82rem;color:var(--muted);">
+    ⚠️ Some listings above are placeholders — contact us to get your business listed with real details.
+  </p>
+</section>
+
+<style>
+  .partner-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color .2s, transform .2s;
+    display: flex; flex-direction: column; gap: .5rem;
+  }
+  .partner-card:hover { border-color: var(--amber); transform: translateY(-3px); }
+  .partner-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .25rem; }
+  .partner-icon { font-size: 1.6rem; }
+  .partner-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem; padding: .2rem .55rem;
+    border-radius: 3px; background: var(--bg);
+    color: var(--amber); border: 1px solid var(--amber-dim);
+    letter-spacing: .06em;
+  }
+  .partner-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+  .partner-type { font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: var(--muted); }
+  .partner-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+  .partner-contact a {
+    display: inline-block; margin-top: .5rem;
+    font-size: .82rem; font-weight: 600;
+    color: var(--steel); text-decoration: none;
+    transition: color .2s;
+  }
+  .partner-contact a:hover { color: var(--amber); }
+  .partner-placeholder {
+    display: inline-block; margin-top: .5rem;
+    font-size: .82rem; font-weight: 600;
+    color: var(--muted); font-style: italic;
+  }
+</style>
+
+<!-- LOCAL DIRECTORY -->
+<section id="directory" style="max-width:1100px;margin:0 auto;padding:5.5rem 2.5rem;">
+  <div class="section-head" style="text-align:center;margin-bottom:2.5rem;">
+    <div class="eyebrow" style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--amber);letter-spacing:.1em;">COMMUNITY DIRECTORY</div>
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;margin-top:.5rem;">Saifabad &amp; Patti Local Contacts</h2>
+    <p style="color:var(--muted);margin-top:.6rem;max-width:560px;margin-left:auto;margin-right:auto;">
+      Everyday local numbers — electricians, drivers, tradespeople, and essential services in the area.
+    </p>
+  </div>
+
+  <input
+    type="text"
+    id="directorySearch"
+    placeholder="🔍 Search by name…"
+    oninput="filterDirectory()"
+    style="width:100%;max-width:420px;display:block;margin:0 auto 2rem;padding:.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:.9rem;"
+  />
+
+  <div class="directory-grid" id="directoryGrid">
+    <div class="directory-item"><span class="directory-name">Akhilesh Lineman Saifabad</span><a href="tel:+919336931142">📞 93369 31142</a></div>
+    <div class="directory-item"><span class="directory-name">Akhilesh Tiwari CCTV</span><a href="tel:+919839207569">📞 98392 07569</a></div>
+    <div class="directory-item"><span class="directory-name">Altaf Shaikh — Sliding Jali Door</span><a href="tel:+918080370251">📞 80803 70251</a></div>
+    <div class="directory-item"><span class="directory-name">Anant Mishra (Gurubhai)</span><a href="tel:+918604486228">📞 86044 86228</a></div>
+    <div class="directory-item"><span class="directory-name">Anil-Guddu Barber</span><a href="tel:+917706095741">📞 77060 95741</a></div>
+    <div class="directory-item"><span class="directory-name">Anil Muraini Barber</span><a href="tel:+919336846288">📞 93368 46288</a></div>
+    <div class="directory-item"><span class="directory-name">Anurag Mishra — Driver</span><a href="tel:+918604542549">📞 86045 42549</a></div>
+    <div class="directory-item"><span class="directory-name">Chaurasiya Powerhouse</span><a href="tel:+919721848017">📞 97218 48017</a></div>
+    <div class="directory-item"><span class="directory-name">Dakiya Saifabad</span><a href="tel:+917376313957">📞 73763 13957</a></div>
+    <div class="directory-item"><span class="directory-name">E-Rickshaw 1</span><a href="tel:+917307938993">📞 73079 38993</a></div>
+    <div class="directory-item"><span class="directory-name">E-Rickshaw 2</span><a href="tel:+917348691452">📞 73486 91452</a></div>
+    <div class="directory-item"><span class="directory-name">Firoj Mistri Saifabad</span><a href="tel:+919794269924">📞 97942 69924</a></div>
+    <div class="directory-item"><span class="directory-name">Gas Cylinder</span><a href="tel:+919346218739">📞 93462 18739</a></div>
+    <div class="directory-item"><span class="directory-name">Ghanshyam Mishra</span><a href="tel:+919450059028">📞 94500 59028</a></div>
+    <div class="directory-item"><span class="directory-name">Guddu Electrician</span><a href="tel:+919850246066">📞 98502 46066</a></div>
+    <div class="directory-item"><span class="directory-name">Gulab Mistri</span><a href="tel:+918805114917">📞 88051 14917</a></div>
+    <div class="directory-item"><span class="directory-name">Gupta Computer Saifabad</span><a href="tel:+919455486954">📞 94554 86954</a></div>
+    <div class="directory-item"><span class="directory-name">JE Dhundhui (Vidyut Vibhag UP)</span><a href="tel:+919451098486">📞 94510 98486</a></div>
+    <div class="directory-item"><span class="directory-name">JWO Tripathi</span><a href="tel:+919013570103">📞 90135 70103</a></div>
+    <div class="directory-item"><span class="directory-name">Kishan Lal Saifabad — Water</span><a href="tel:+919628916691">📞 96289 16691</a></div>
+    <div class="directory-item"><span class="directory-name">Guddu Mistry — Tilewala</span><a href="tel:+918888363182">📞 88883 63182</a></div>
+    <div class="directory-item"><span class="directory-name">Patti Police</span><a href="tel:+919454404121">📞 94544 04121</a></div>
+    <div class="directory-item"><span class="directory-name">Pintu Lineman</span><a href="tel:+919839833158">📞 98398 33158</a></div>
+    <div class="directory-item"><span class="directory-name">Premkumar Tiwari — Ertiga (Suleman)</span><a href="tel:+916388422024">📞 63884 22024</a></div>
+    <div class="directory-item"><span class="directory-name">Purvanchal Vidyut Vitaran Nigam Ltd</span><a href="tel:+918010968292">📞 80109 68292</a></div>
+    <div class="directory-item"><span class="directory-name">Raj Shukla Saifabad</span><a href="tel:+919867644249">📞 98676 44249</a></div>
+    <div class="directory-item"><span class="directory-name">Ram Jeet Yadav — Driver Saifabad</span><a href="tel:+917400302837">📞 74003 02837</a></div>
+    <div class="directory-item"><span class="directory-name">Sani Digital Seva Kendra Muraini</span><a href="tel:+917068971075">📞 70689 71075</a></div>
+    <div class="directory-item"><span class="directory-name">Saurabh Tiwari Patti</span><a href="tel:+919628934201">📞 96289 34201</a></div>
+    <div class="directory-item"><span class="directory-name">Shailesh — Driver</span><a href="tel:+919049488816">📞 90494 88816</a></div>
+    <div class="directory-item"><span class="directory-name">Shukla Electrician</span><a href="tel:+919594933582">📞 95949 33582</a></div>
+    <div class="directory-item"><span class="directory-name">Sonu Sound Saifabad</span><a href="tel:+919653340025">📞 96533 40025</a></div>
+    <div class="directory-item"><span class="directory-name">Vishal Jaiswal — Gas Chulha Saifabad</span><a href="tel:+916307191065">📞 63071 91065</a></div>
+    <div class="directory-item"><span class="directory-name">Vishal Singh — Thekedar</span><a href="tel:+919453810000">📞 94538 10000</a></div>
+  </div>
+
+  <p id="directoryEmpty" style="display:none;text-align:center;color:var(--muted);margin-top:2rem;font-size:.9rem;">No matches found.</p>
+</section>
+
+</div>
+<!-- END VENDOR & DIRECTORY LOCK -->
+
+<!-- COMMISSION TRACKER -->
+<div id="trackerLock" style="max-width:480px;margin:5rem auto;padding:2.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
+  <div style="font-size:2rem;margin-bottom:.5rem;">🔐</div>
+  <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:.5rem;">Commission Tracker — Private</h3>
+  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;">Owner-only. Enter the password to view and log orders.</p>
+  <input type="password" id="trackerPassInput" placeholder="Enter password" style="width:100%;padding:.7rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:.9rem;margin-bottom:.8rem;" onkeydown="if(event.key==='Enter') checkTrackerPassword()"/>
+  <button onclick="checkTrackerPassword()" style="width:100%;padding:.7rem 1rem;background:var(--amber);color:#0B0F14;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:.9rem;">Unlock</button>
+  <p id="trackerPassError" style="display:none;color:#e05555;font-size:.8rem;margin-top:.8rem;">❌ Wrong password, try again.</p>
+</div>
+
+<section id="tracker-app" style="display:none;max-width:1100px;margin:0 auto;padding:3rem 2.5rem 6rem;">
+  <div class="section-label">// Owner Only</div>
+  <h2>Commission Tracker</h2>
+  <p class="section-intro">Data is saved only on this device/browser. Use the Export button regularly to back up your data.</p>
+
+  <!-- Summary cards -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:2rem 0;">
+    <div class="tk-card"><div class="tk-num" id="tkTotalOrders">0</div><div class="tk-label">Total Orders</div></div>
+    <div class="tk-card"><div class="tk-num" id="tkTotalCommission">₹0</div><div class="tk-label">Total Commission</div></div>
+    <div class="tk-card"><div class="tk-num" id="tkReceived">₹0</div><div class="tk-label">Received</div></div>
+    <div class="tk-card"><div class="tk-num" id="tkPending">₹0</div><div class="tk-label">Pending</div></div>
+    <div class="tk-card"><div class="tk-num" id="tkThisMonth">₹0</div><div class="tk-label">This Month</div></div>
+  </div>
+
+  <!-- Add entry form -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem;">
+    <h3 style="font-size:1.05rem;margin-bottom:1rem;">➕ Add New Order</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;">
+      <div class="field"><label>Date</label><input type="date" id="tkDate"/></div>
+      <div class="field"><label>Customer Name</label><input type="text" id="tkCustomer" placeholder="Ram Kumar"/></div>
+      <div class="field"><label>Customer Phone</label><input type="tel" id="tkPhone" placeholder="98765 43210"/></div>
+      <div class="field"><label>Vendor Name</label><input type="text" id="tkVendor" placeholder="Akhilesh Tiwari CCTV"/></div>
+      <div class="field"><label>Service</label><input type="text" id="tkService" placeholder="CCTV Installation"/></div>
+      <div class="field"><label>Job Amount (₹)</label><input type="number" id="tkAmount" placeholder="2000"/></div>
+      <div class="field"><label>Commission %</label><input type="number" id="tkPercent" placeholder="10"/></div>
+      <div class="field"><label>Received?</label>
+        <select id="tkReceivedInput"><option value="No">No</option><option value="Yes">Yes</option></select>
+      </div>
+    </div>
+    <div class="field" style="margin-top:.8rem;"><label>Notes</label><input type="text" id="tkNotes" placeholder="Optional"/></div>
+    <button onclick="tkAddEntry()" class="submit-btn" style="margin-top:1rem;max-width:220px;">Add Entry</button>
+  </div>
+
+  <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem;">
+    <button onclick="tkExportCSV()" class="submit-btn" style="max-width:220px;background:transparent;border:1px solid var(--border);color:var(--white);">⬇️ Export Backup (CSV)</button>
+  </div>
+
+  <!-- Entries table -->
+  <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:.85rem;" id="tkTable">
+      <thead>
+        <tr style="background:var(--surface);text-align:left;">
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Date</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Customer</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Vendor</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Service</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Job ₹</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">%</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Commission ₹</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Received</th>
+          <th style="padding:.6rem;border-bottom:1px solid var(--border);"></th>
+        </tr>
+      </thead>
+      <tbody id="tkTableBody"></tbody>
+    </table>
+    <p id="tkEmpty" style="display:none;text-align:center;color:var(--muted);padding:2rem;">No entries yet — add your first order above.</p>
+  </div>
+</section>
+
+<style>
+  .tk-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.2rem; text-align:center; }
+  .tk-num { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--amber); }
+  .tk-label { font-size:.78rem; color:var(--muted); margin-top:.3rem; }
+  #tkTable td { padding:.6rem; border-bottom:1px solid var(--border); }
+  #tkTable tr:hover { background:rgba(255,255,255,0.02); }
+</style>
+
+<style>
+  .directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem;
+  }
+  .directory-item {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    padding: .8rem 1rem;
+    transition: border-color .2s;
+  }
+  .directory-item:hover { border-color: var(--amber); }
+  .directory-name { font-size: .88rem; font-weight: 500; }
+  .directory-item a {
+    font-family: 'JetBrains Mono', monospace; font-size: .78rem;
+    color: var(--amber); text-decoration: none; white-space: nowrap; flex-shrink: 0;
+  }
+  .directory-item a:hover { text-decoration: underline; }
+  @media (max-width: 700px) {
+    .directory-grid { grid-template-columns: 1fr; }
+    .directory-item { flex-direction: column; align-items: flex-start; gap: .3rem; }
+  }
+</style>
+
+<script>
+  function filterDirectory() {
+    const q = document.getElementById('directorySearch').value.trim().toLowerCase();
+    const items = document.querySelectorAll('#directoryGrid .directory-item');
+    let visibleCount = 0;
+    items.forEach(item => {
+      const name = item.querySelector('.directory-name').textContent.toLowerCase();
+      const match = name.includes(q);
+      item.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    document.getElementById('directoryEmpty').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+</script>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">// Reach Us</div>
+      <h2>Book a Service or<br/>Ask a Question</h2>
+      <p class="section-intro">We're local — just call or WhatsApp and we'll arrange a visit at a time that works for you.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Phone / WhatsApp</div>
+            <div class="ci-value">+91 79881 34257</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📧</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:pradeep150780.pandey@gmail.com" style="color:var(--white);text-decoration:none;">pradeep150780.pandey@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Based At</div>
+            <div class="ci-value">Patti, Pratapgarh, UP — 230001</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label">Working Hours</div>
+            <div class="ci-value">Mon–Sat, 8 AM – 7 PM &nbsp;|&nbsp; Emergency: 24/7</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🗺️</div>
+          <div>
+            <div class="ci-label">Coverage</div>
+            <div class="ci-value">Patti · Saifabad · Chanda · Dhakwa · Singramau & nearby</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;max-width:220px;">
+          <img src="navika-qr-code.png" alt="Scan to visit our website" style="width:100%;border-radius:6px;"/>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.6rem;">Scan to share our site</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;max-width:220px;">
+          <img src="navika-upi-qr-indianbank.png" alt="Scan to pay via UPI" style="width:100%;border-radius:6px;"/>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:.6rem;">💰 Scan to Pay via UPI</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Ramesh Yadav" autocomplete="name" required/>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="tel" required/>
+          </div>
+        </div>
+        <div class="field">
+          <label for="area">Your Area / Village</label>
+          <select id="area" required>
+            <option value="">Select your area…</option>
+            <option>Patti</option>
+            <option>Saifabad</option>
+            <option>Chanda</option>
+            <option>Dhakwa</option>
+            <option>Singramau</option>
+            <option>Lalganj</option>
+            <option>Kunda</option>
+            <option>Mandhata</option>
+            <option>Sandwa</option>
+            <option>Other nearby area</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="service">Service Needed</label>
+          <select id="service" required>
+            <option value="">Select service…</option>
+            <option>Electrical Instrument Maintenance</option>
+            <option>Mechanical Instrument Maintenance</option>
+            <option>Calibration & Certification</option>
+            <option>Annual Maintenance Contract (AMC)</option>
+            <option>Emergency Breakdown</option>
+            <option>On-Site Inspection</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Describe the Problem</label>
+          <textarea id="msg" placeholder="Instrument name, issue, preferred visit time…"></textarea>
+        </div>
+        <button class="submit-btn" onclick="handleSubmit()">📱 Send via WhatsApp →</button>
+        <button class="submit-btn" onclick="sendViaEmail()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">📧 Or Send via Email</button>
+        <button class="submit-btn" onclick="sendViaSMS()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">💬 Or Send via SMS (Message)</button>
+        <button onclick="callUsNow()" class="submit-btn" style="margin-top:.7rem;background:transparent;border:1px solid var(--amber);color:var(--amber);">☎️ No Internet? Give Us a Missed Call</button>
+        <p style="font-size:.76rem;color:var(--muted);margin-top:.6rem;text-align:center;">
+          Missed call karein aur call turant kaat dein — hum aapko wapas call karenge.
+        </p>
+        <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem;text-align:center;">
+          Tapping a button above opens WhatsApp or your email app with the details already filled in — you just need to tap Send there to complete it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">NAVIKA <span>HOME SOLUTIONS</span></div>
+  <p>Electrical & mechanical instrument maintenance — Patti, Saifabad, Chanda, Dhakwa, Singramau & nearby areas.</p>
+  <p>© 2026 NAVIKA HOME SOLUTIONS. All rights reserved.</p>
+</footer>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/917988134257" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+  (function () {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+
+  // --- Vendor & Directory password gate ---
+  // To change the password, just edit the text between the quotes below.
+  const VENDOR_PASSWORD = "navika2026";
+
+  function unlockVendorSection() {
+    document.getElementById('vendorLock').style.display = 'none';
+    document.getElementById('vendorProtected').style.display = 'block';
+  }
+
+  function checkVendorPassword() {
+    const input = document.getElementById('vendorPassInput');
+    const error = document.getElementById('vendorPassError');
+    if (input.value === VENDOR_PASSWORD) {
+      unlockVendorSection();
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  // --- Commission Tracker password gate ---
+  // To change the password, just edit the text between the quotes below.
+  const TRACKER_PASSWORD = "navika2026";
+
+  function unlockTracker() {
+    document.getElementById('trackerLock').style.display = 'none';
+    document.getElementById('tracker-app').style.display = 'block';
+    tkRender();
+  }
+
+  function checkTrackerPassword() {
+    const input = document.getElementById('trackerPassInput');
+    const error = document.getElementById('trackerPassError');
+    if (input.value === TRACKER_PASSWORD) {
+      unlockTracker();
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  // --- Commission Tracker data logic (saved in this browser's localStorage) ---
+  const TK_KEY = 'navikaCommissionEntries';
+
+  function tkGetEntries() {
+    try {
+      return JSON.parse(localStorage.getItem(TK_KEY)) || [];
+    } catch (e) { return []; }
+  }
+
+  function tkSaveEntries(entries) {
+    localStorage.setItem(TK_KEY, JSON.stringify(entries));
+  }
+
+  function tkAddEntry() {
+    const date = document.getElementById('tkDate').value;
+    const customer = document.getElementById('tkCustomer').value.trim();
+    const phone = document.getElementById('tkPhone').value.trim();
+    const vendor = document.getElementById('tkVendor').value.trim();
+    const service = document.getElementById('tkService').value.trim();
+    const amount = parseFloat(document.getElementById('tkAmount').value) || 0;
+    const percent = parseFloat(document.getElementById('tkPercent').value) || 0;
+    const received = document.getElementById('tkReceivedInput').value;
+    const notes = document.getElementById('tkNotes').value.trim();
+
+    if (!date || !customer || !vendor || !amount) {
+      alert('Please fill in at least Date, Customer, Vendor, and Job Amount.');
+      return;
+    }
+
+    const commission = Math.round(amount * percent / 100);
+    const entries = tkGetEntries();
+    entries.push({ date, customer, phone, vendor, service, amount, percent, commission, received, notes });
+    tkSaveEntries(entries);
+
+    // Clear form
+    ['tkDate','tkCustomer','tkPhone','tkVendor','tkService','tkAmount','tkPercent','tkNotes'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('tkReceivedInput').value = 'No';
+
+    tkRender();
+  }
+
+  function tkDeleteEntry(index) {
+    if (!confirm('Delete this entry?')) return;
+    const entries = tkGetEntries();
+    entries.splice(index, 1);
+    tkSaveEntries(entries);
+    tkRender();
+  }
+
+  function tkToggleReceived(index) {
+    const entries = tkGetEntries();
+    entries[index].received = entries[index].received === 'Yes' ? 'No' : 'Yes';
+    tkSaveEntries(entries);
+    tkRender();
+  }
+
+  function tkRender() {
+    const entries = tkGetEntries();
+    const tbody = document.getElementById('tkTableBody');
+    const empty = document.getElementById('tkEmpty');
+    tbody.innerHTML = '';
+
+    if (entries.length === 0) {
+      empty.style.display = 'block';
+    } else {
+      empty.style.display = 'none';
+      entries.forEach((e, i) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${e.date}</td>
+          <td>${e.customer}${e.phone ? '<br><span style="color:var(--muted);font-size:.78rem;">'+e.phone+'</span>' : ''}</td>
+          <td>${e.vendor}</td>
+          <td>${e.service || '-'}</td>
+          <td>₹${e.amount}</td>
+          <td>${e.percent}%</td>
+          <td>₹${e.commission}</td>
+          <td><button onclick="tkToggleReceived(${i})" style="background:${e.received==='Yes' ? '#1e5c2a' : '#5c1e1e'};color:white;border:none;border-radius:4px;padding:.3rem .6rem;font-size:.75rem;cursor:pointer;">${e.received}</button></td>
+          <td><button onclick="tkDeleteEntry(${i})" style="background:none;border:none;color:#e05555;cursor:pointer;font-size:1rem;">🗑️</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Summary calculations
+    const totalOrders = entries.length;
+    const totalCommission = entries.reduce((s, e) => s + e.commission, 0);
+    const received = entries.filter(e => e.received === 'Yes').reduce((s, e) => s + e.commission, 0);
+    const pending = totalCommission - received;
+
+    const now = new Date();
+    const thisMonth = entries.filter(e => {
+      const d = new Date(e.date);
+      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+    }).reduce((s, e) => s + e.commission, 0);
+
+    document.getElementById('tkTotalOrders').textContent = totalOrders;
+    document.getElementById('tkTotalCommission').textContent = '₹' + totalCommission;
+    document.getElementById('tkReceived').textContent = '₹' + received;
+    document.getElementById('tkPending').textContent = '₹' + pending;
+    document.getElementById('tkThisMonth').textContent = '₹' + thisMonth;
+  }
+
+  function tkExportCSV() {
+    const entries = tkGetEntries();
+    if (entries.length === 0) {
+      alert('No entries to export yet.');
+      return;
+    }
+    const headers = ['Date','Customer','Phone','Vendor','Service','Job Amount','Commission %','Commission Amount','Received','Notes'];
+    const rows = entries.map(e => [e.date, e.customer, e.phone, e.vendor, e.service, e.amount, e.percent, e.commission, e.received, e.notes]);
+    let csv = headers.join(',') + '\n';
+    rows.forEach(r => {
+      csv += r.map(v => `"${String(v || '').replace(/"/g, '""')}"`).join(',') + '\n';
+    });
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `navika-commission-backup-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function getFormData() {
+    const name    = document.getElementById('name').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const area    = document.getElementById('area').value;
+    const service = document.getElementById('service').value;
+    const msg     = document.getElementById('msg').value.trim();
+
+    if (!name || !phone || !area || !service) {
+      alert('Please fill in all required fields.');
+      return null;
+    }
+
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 10) {
+      alert('Please enter a valid phone number (at least 10 digits).');
+      return null;
+    }
+
+    return { name, phone, area, service, msg };
+  }
+
+  function handleSubmit() {
+    const data = getFormData();
+    if (!data) return;
+
+    const waText = encodeURIComponent(
+      `*New Service Request — NAVIKA HOME SOLUTIONS*\n\n` +
+      `👤 Name: ${data.name}\n` +
+      `📞 Phone: ${data.phone}\n` +
+      `📍 Area: ${data.area}\n` +
+      `🔧 Service: ${data.service}\n` +
+      `📝 Details: ${data.msg || 'Not provided'}`
+    );
+    window.location.href = `https://wa.me/917988134257?text=${waText}`;
+  }
+
+  function sendViaEmail() {
+    const data = getFormData();
+    if (!data) return;
+
+    const subject = encodeURIComponent(`Service Request from ${data.name} — ${data.area}`);
+    const body = encodeURIComponent(
+      `New Service Request\n\nName: ${data.name}\nPhone: ${data.phone}\nArea: ${data.area}\nService: ${data.service}\nDetails: ${data.msg || 'Not provided'}`
+    );
+    window.location.href = `mailto:pradeep150780.pandey@gmail.com?subject=${subject}&body=${body}`;
+  }
+
+  function sendViaSMS() {
+    const data = getFormData();
+    if (!data) return;
+
+    // Keep it short — plain SMS has a length limit
+    const smsBody = encodeURIComponent(
+      `Navika Service Request: ${data.name}, ${data.phone}, ${data.area}, ${data.service}`
+    );
+    // Works on both Android (?) and iPhone (&) — Android is far more common in villages, so use ?
+    window.location.href = `sms:+917988134257?body=${smsBody}`;
+  }
+
+  function callUsNow() {
+    window.location.href = 'tel:+917988134257';
+  }
+</script>
+</body>
+</html>
