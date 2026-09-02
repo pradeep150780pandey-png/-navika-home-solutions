@@ -151,8 +151,8 @@
 
     h1 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2.4rem, 6.5vw, 4.6rem);
-      font-weight: 800; line-height: 1.06; letter-spacing: -0.03em;
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
       margin-bottom: 1.4rem;
     }
     h1 em { font-style: normal; color: var(--amber); }
@@ -715,82 +715,6 @@
 </div>
 <!-- END VENDOR & DIRECTORY LOCK -->
 
-<!-- COMMISSION TRACKER -->
-<div id="trackerLock" style="max-width:480px;margin:5rem auto;padding:2.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
-  <div style="font-size:2rem;margin-bottom:.5rem;">🔐</div>
-  <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:.5rem;">Commission Tracker — Private</h3>
-  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;">Owner-only. Enter the password to view and log orders.</p>
-  <input type="password" id="trackerPassInput" placeholder="Enter password" style="width:100%;padding:.7rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:.9rem;margin-bottom:.8rem;" onkeydown="if(event.key==='Enter') checkTrackerPassword()"/>
-  <button onclick="checkTrackerPassword()" style="width:100%;padding:.7rem 1rem;background:var(--amber);color:#0B0F14;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:.9rem;">Unlock</button>
-  <p id="trackerPassError" style="display:none;color:#e05555;font-size:.8rem;margin-top:.8rem;">❌ Wrong password, try again.</p>
-</div>
-
-<section id="tracker-app" style="display:none;max-width:1100px;margin:0 auto;padding:3rem 2.5rem 6rem;">
-  <div class="section-label">// Owner Only</div>
-  <h2>Commission Tracker</h2>
-  <p class="section-intro">Data is saved only on this device/browser. Use the Export button regularly to back up your data.</p>
-
-  <!-- Summary cards -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:2rem 0;">
-    <div class="tk-card"><div class="tk-num" id="tkTotalOrders">0</div><div class="tk-label">Total Orders</div></div>
-    <div class="tk-card"><div class="tk-num" id="tkTotalCommission">₹0</div><div class="tk-label">Total Commission</div></div>
-    <div class="tk-card"><div class="tk-num" id="tkReceived">₹0</div><div class="tk-label">Received</div></div>
-    <div class="tk-card"><div class="tk-num" id="tkPending">₹0</div><div class="tk-label">Pending</div></div>
-    <div class="tk-card"><div class="tk-num" id="tkThisMonth">₹0</div><div class="tk-label">This Month</div></div>
-  </div>
-
-  <!-- Add entry form -->
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin-bottom:2rem;">
-    <h3 style="font-size:1.05rem;margin-bottom:1rem;">➕ Add New Order</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;">
-      <div class="field"><label>Date</label><input type="date" id="tkDate"/></div>
-      <div class="field"><label>Customer Name</label><input type="text" id="tkCustomer" placeholder="Ram Kumar"/></div>
-      <div class="field"><label>Customer Phone</label><input type="tel" id="tkPhone" placeholder="98765 43210"/></div>
-      <div class="field"><label>Vendor Name</label><input type="text" id="tkVendor" placeholder="Akhilesh Tiwari CCTV"/></div>
-      <div class="field"><label>Service</label><input type="text" id="tkService" placeholder="CCTV Installation"/></div>
-      <div class="field"><label>Job Amount (₹)</label><input type="number" id="tkAmount" placeholder="2000"/></div>
-      <div class="field"><label>Commission %</label><input type="number" id="tkPercent" placeholder="10"/></div>
-      <div class="field"><label>Received?</label>
-        <select id="tkReceivedInput"><option value="No">No</option><option value="Yes">Yes</option></select>
-      </div>
-    </div>
-    <div class="field" style="margin-top:.8rem;"><label>Notes</label><input type="text" id="tkNotes" placeholder="Optional"/></div>
-    <button onclick="tkAddEntry()" class="submit-btn" style="margin-top:1rem;max-width:220px;">Add Entry</button>
-  </div>
-
-  <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem;">
-    <button onclick="tkExportCSV()" class="submit-btn" style="max-width:220px;background:transparent;border:1px solid var(--border);color:var(--white);">⬇️ Export Backup (CSV)</button>
-  </div>
-
-  <!-- Entries table -->
-  <div style="overflow-x:auto;">
-    <table style="width:100%;border-collapse:collapse;font-size:.85rem;" id="tkTable">
-      <thead>
-        <tr style="background:var(--surface);text-align:left;">
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Date</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Customer</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Vendor</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Service</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Job ₹</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">%</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Commission ₹</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);">Received</th>
-          <th style="padding:.6rem;border-bottom:1px solid var(--border);"></th>
-        </tr>
-      </thead>
-      <tbody id="tkTableBody"></tbody>
-    </table>
-    <p id="tkEmpty" style="display:none;text-align:center;color:var(--muted);padding:2rem;">No entries yet — add your first order above.</p>
-  </div>
-</section>
-
-<style>
-  .tk-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1.2rem; text-align:center; }
-  .tk-num { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--amber); }
-  .tk-label { font-size:.78rem; color:var(--muted); margin-top:.3rem; }
-  #tkTable td { padding:.6rem; border-bottom:1px solid var(--border); }
-  #tkTable tr:hover { background:rgba(255,255,255,0.02); }
-</style>
 
 <style>
   .directory-grid {
@@ -877,14 +801,14 @@
         </div>
       </div>
 
-      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;max-width:220px;">
-          <img src="navika-qr-code.png" alt="Scan to visit our website" style="width:100%;border-radius:6px;"/>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.6rem;">Scan to share our site</p>
+      <div style="margin-top:1.5rem;display:flex;gap:.7rem;flex-wrap:wrap;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.8rem;text-align:center;max-width:110px;">
+          <img src="navika-qr-code.png" alt="Scan to visit our website" style="width:100%;border-radius:4px;"/>
+          <p style="font-size:.65rem;color:var(--muted);margin-top:.4rem;">Visit our site</p>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;max-width:220px;">
-          <img src="navika-upi-qr-indianbank.png" alt="Scan to pay via UPI" style="width:100%;border-radius:6px;"/>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.6rem;">💰 Scan to Pay via UPI</p>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.8rem;text-align:center;max-width:110px;">
+          <img src="navika-upi-qr-indianbank.png" alt="Scan to pay via UPI" style="width:100%;border-radius:4px;"/>
+          <p style="font-size:.65rem;color:var(--muted);margin-top:.4rem;">💰 Pay via UPI</p>
         </div>
       </div>
     </div>
@@ -952,7 +876,6 @@
   <div class="footer-logo">NAVIKA <span>HOME SOLUTIONS</span></div>
   <p>Electrical & mechanical instrument maintenance — Patti, Saifabad, Chanda, Dhakwa, Badlapur & nearby areas.</p>
   <p>© 2026 NAVIKA HOME SOLUTIONS. All rights reserved.</p>
-  <p style="margin-top:1rem;"><a href="#trackerLock" style="color:var(--muted);font-size:.72rem;text-decoration:none;">Owner Login</a></p>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -1002,154 +925,6 @@
       input.focus();
     }
   }
-
-  // --- Commission Tracker password gate ---
-  // To change the password, just edit the text between the quotes below.
-  const TRACKER_PASSWORD = "navika2026";
-
-  function unlockTracker() {
-    document.getElementById('trackerLock').style.display = 'none';
-    document.getElementById('tracker-app').style.display = 'block';
-    tkRender();
-  }
-
-  function checkTrackerPassword() {
-    const input = document.getElementById('trackerPassInput');
-    const error = document.getElementById('trackerPassError');
-    if (input.value === TRACKER_PASSWORD) {
-      unlockTracker();
-    } else {
-      error.style.display = 'block';
-      input.value = '';
-      input.focus();
-    }
-  }
-
-  // --- Commission Tracker data logic (saved in this browser's localStorage) ---
-  const TK_KEY = 'navikaCommissionEntries';
-
-  function tkGetEntries() {
-    try {
-      return JSON.parse(localStorage.getItem(TK_KEY)) || [];
-    } catch (e) { return []; }
-  }
-
-  function tkSaveEntries(entries) {
-    localStorage.setItem(TK_KEY, JSON.stringify(entries));
-  }
-
-  function tkAddEntry() {
-    const date = document.getElementById('tkDate').value;
-    const customer = document.getElementById('tkCustomer').value.trim();
-    const phone = document.getElementById('tkPhone').value.trim();
-    const vendor = document.getElementById('tkVendor').value.trim();
-    const service = document.getElementById('tkService').value.trim();
-    const amount = parseFloat(document.getElementById('tkAmount').value) || 0;
-    const percent = parseFloat(document.getElementById('tkPercent').value) || 0;
-    const received = document.getElementById('tkReceivedInput').value;
-    const notes = document.getElementById('tkNotes').value.trim();
-
-    if (!date || !customer || !vendor || !amount) {
-      alert('Please fill in at least Date, Customer, Vendor, and Job Amount.');
-      return;
-    }
-
-    const commission = Math.round(amount * percent / 100);
-    const entries = tkGetEntries();
-    entries.push({ date, customer, phone, vendor, service, amount, percent, commission, received, notes });
-    tkSaveEntries(entries);
-
-    // Clear form
-    ['tkDate','tkCustomer','tkPhone','tkVendor','tkService','tkAmount','tkPercent','tkNotes'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
-    document.getElementById('tkReceivedInput').value = 'No';
-
-    tkRender();
-  }
-
-  function tkDeleteEntry(index) {
-    if (!confirm('Delete this entry?')) return;
-    const entries = tkGetEntries();
-    entries.splice(index, 1);
-    tkSaveEntries(entries);
-    tkRender();
-  }
-
-  function tkToggleReceived(index) {
-    const entries = tkGetEntries();
-    entries[index].received = entries[index].received === 'Yes' ? 'No' : 'Yes';
-    tkSaveEntries(entries);
-    tkRender();
-  }
-
-  function tkRender() {
-    const entries = tkGetEntries();
-    const tbody = document.getElementById('tkTableBody');
-    const empty = document.getElementById('tkEmpty');
-    tbody.innerHTML = '';
-
-    if (entries.length === 0) {
-      empty.style.display = 'block';
-    } else {
-      empty.style.display = 'none';
-      entries.forEach((e, i) => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${e.date}</td>
-          <td>${e.customer}${e.phone ? '<br><span style="color:var(--muted);font-size:.78rem;">'+e.phone+'</span>' : ''}</td>
-          <td>${e.vendor}</td>
-          <td>${e.service || '-'}</td>
-          <td>₹${e.amount}</td>
-          <td>${e.percent}%</td>
-          <td>₹${e.commission}</td>
-          <td><button onclick="tkToggleReceived(${i})" style="background:${e.received==='Yes' ? '#1e5c2a' : '#5c1e1e'};color:white;border:none;border-radius:4px;padding:.3rem .6rem;font-size:.75rem;cursor:pointer;">${e.received}</button></td>
-          <td><button onclick="tkDeleteEntry(${i})" style="background:none;border:none;color:#e05555;cursor:pointer;font-size:1rem;">🗑️</button></td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    // Summary calculations
-    const totalOrders = entries.length;
-    const totalCommission = entries.reduce((s, e) => s + e.commission, 0);
-    const received = entries.filter(e => e.received === 'Yes').reduce((s, e) => s + e.commission, 0);
-    const pending = totalCommission - received;
-
-    const now = new Date();
-    const thisMonth = entries.filter(e => {
-      const d = new Date(e.date);
-      return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
-    }).reduce((s, e) => s + e.commission, 0);
-
-    document.getElementById('tkTotalOrders').textContent = totalOrders;
-    document.getElementById('tkTotalCommission').textContent = '₹' + totalCommission;
-    document.getElementById('tkReceived').textContent = '₹' + received;
-    document.getElementById('tkPending').textContent = '₹' + pending;
-    document.getElementById('tkThisMonth').textContent = '₹' + thisMonth;
-  }
-
-  function tkExportCSV() {
-    const entries = tkGetEntries();
-    if (entries.length === 0) {
-      alert('No entries to export yet.');
-      return;
-    }
-    const headers = ['Date','Customer','Phone','Vendor','Service','Job Amount','Commission %','Commission Amount','Received','Notes'];
-    const rows = entries.map(e => [e.date, e.customer, e.phone, e.vendor, e.service, e.amount, e.percent, e.commission, e.received, e.notes]);
-    let csv = headers.join(',') + '\n';
-    rows.forEach(r => {
-      csv += r.map(v => `"${String(v || '').replace(/"/g, '""')}"`).join(',') + '\n';
-    });
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `navika-commission-backup-${new Date().toISOString().slice(0,10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
   function getFormData() {
     const name    = document.getElementById('name').value.trim();
     const phone   = document.getElementById('phone').value.trim();
