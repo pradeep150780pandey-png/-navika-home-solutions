@@ -336,8 +336,6 @@
   </div>
   <ul id="navMenu">
     <li><a href="#services">Services</a></li>
-    <li><a href="#vendorLock">Partners</a></li>
-    <li><a href="#vendorLock">Directory</a></li>
     <li><a href="https://github.com/pradeep150780pandey-png/-navika-home-solutions/releases/download/v1.0/Navika.Home.Solutions.apk">Get App</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -404,11 +402,6 @@
       <span class="qm-en">Get App</span>
       <span class="qm-hi">ऐप डाउनलोड करें</span>
     </a>
-    <a href="#vendorLock" class="qm-btn">
-      <span class="qm-icon">🤝</span>
-      <span class="qm-en">Partners & Directory</span>
-      <span class="qm-hi">वेंडर लिस्ट</span>
-    </a>
   </div>
 </section>
 
@@ -455,13 +448,13 @@
 </style>
 
 <!-- VENDOR & DIRECTORY LOCK -->
-<div id="vendorLock" style="max-width:480px;margin:5rem auto;padding:2.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
-  <div style="font-size:2rem;margin-bottom:.5rem;">🔒</div>
-  <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;margin-bottom:.5rem;">Vendor &amp; Directory — Private</h3>
-  <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.2rem;">This section is password-protected. Enter the password to view vendor listings and local contacts.</p>
-  <input type="password" id="vendorPassInput" placeholder="Enter password" style="width:100%;padding:.7rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:.9rem;margin-bottom:.8rem;" onkeydown="if(event.key==='Enter') checkVendorPassword()"/>
-  <button onclick="checkVendorPassword()" style="width:100%;padding:.7rem 1rem;background:var(--amber);color:#0B0F14;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:.9rem;">Unlock</button>
-  <p id="vendorPassError" style="display:none;color:#e05555;font-size:.8rem;margin-top:.8rem;">❌ Wrong password, try again.</p>
+<div style="display:flex;justify-content:flex-end;padding:1.5rem 1.2rem;">
+  <div id="vendorLock" style="width:150px;padding:.7rem .6rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center;">
+    <p style="color:var(--muted);font-size:.62rem;margin-bottom:.4rem;">Owner only</p>
+    <input type="password" id="vendorPassInput" placeholder="Password" style="width:100%;padding:.3rem .4rem;background:var(--bg);border:1px solid var(--border);border-radius:5px;color:var(--white);font-size:.68rem;margin-bottom:.4rem;" onkeydown="if(event.key==='Enter') checkVendorPassword()"/>
+    <button onclick="checkVendorPassword()" style="width:100%;padding:.3rem .4rem;background:var(--amber);color:#0B0F14;border:none;border-radius:5px;font-weight:700;cursor:pointer;font-size:.68rem;">Unlock</button>
+    <p id="vendorPassError" style="display:none;color:#e05555;font-size:.6rem;margin-top:.4rem;">❌ Wrong</p>
+  </div>
 </div>
 
 <div id="vendorProtected" style="display:none;">
@@ -876,6 +869,7 @@
   <div class="footer-logo">NAVIKA <span>HOME SOLUTIONS</span></div>
   <p>Electrical & mechanical instrument maintenance — Patti, Saifabad, Chanda, Dhakwa, Badlapur & nearby areas.</p>
   <p>© 2026 NAVIKA HOME SOLUTIONS. All rights reserved.</p>
+  <p style="margin-top:1rem;"><a href="#vendorLock" style="color:var(--muted);font-size:.72rem;text-decoration:none;">Vendor Directory</a></p>
 </footer>
 
 <!-- WhatsApp Float Button -->
