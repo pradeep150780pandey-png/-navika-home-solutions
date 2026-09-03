@@ -372,7 +372,7 @@
     </div>
 
     <div class="stats-strip">
-      <div class="stat"><div class="stat-num">800+</div><div class="stat-label">Instruments Serviced Locally</div></div>
+      <div class="stat"><div class="stat-num">800+</div><div class="stat-label">Customers Served Locally</div></div>
       <div class="stat"><div class="stat-num">5</div><div class="stat-label">Core Areas Covered</div></div>
       <div class="stat"><div class="stat-num">Same Day</div><div class="stat-label">Local Response</div></div>
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Emergency Support</div></div>
@@ -448,7 +448,7 @@
 </style>
 
 <!-- VENDOR & DIRECTORY LOCK -->
-<div style="display:flex;justify-content:flex-end;padding:1.5rem 1.2rem;">
+<div id="vendorLockWrap" style="display:none;justify-content:flex-end;padding:1.5rem 1.2rem;">
   <div id="vendorLock" style="width:150px;padding:.7rem .6rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center;">
     <p style="color:var(--muted);font-size:.62rem;margin-bottom:.4rem;">Owner only</p>
     <input type="password" id="vendorPassInput" placeholder="Password" style="width:100%;padding:.3rem .4rem;background:var(--bg);border:1px solid var(--border);border-radius:5px;color:var(--white);font-size:.68rem;margin-bottom:.4rem;" onkeydown="if(event.key==='Enter') checkVendorPassword()"/>
@@ -851,14 +851,20 @@
           <textarea id="msg" placeholder="Instrument name, issue, preferred visit time…"></textarea>
         </div>
         <button class="submit-btn" onclick="handleSubmit()">📱 Send via WhatsApp →</button>
-        <button class="submit-btn" onclick="sendViaEmail()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">📧 Or Send via Email</button>
-        <button class="submit-btn" onclick="sendViaSMS()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">💬 Or Send via SMS (Message)</button>
-        <button onclick="callUsNow()" class="submit-btn" style="margin-top:.7rem;background:transparent;border:1px solid var(--amber);color:var(--amber);">☎️ No Internet? Give Us a Missed Call</button>
-        <p style="font-size:.76rem;color:var(--muted);margin-top:.6rem;text-align:center;">
-          Missed call karein aur call turant kaat dein — hum aapko wapas call karenge.
-        </p>
-        <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem;text-align:center;">
-          Tapping a button above opens WhatsApp or your email app with the details already filled in — you just need to tap Send there to complete it.
+        <button onclick="callUsNow()" class="submit-btn" style="margin-top:.7rem;background:transparent;border:1px solid var(--amber);color:var(--amber);">☎️ Call Now</button>
+
+        <button onclick="toggleMoreContact()" id="moreContactToggle" style="margin-top:.9rem;width:100%;background:none;border:none;color:var(--muted);font-size:.8rem;text-decoration:underline;cursor:pointer;">More contact options ▾</button>
+
+        <div id="moreContactOptions" style="display:none;margin-top:.7rem;">
+          <button class="submit-btn" onclick="sendViaEmail()" style="background:transparent;border:1px solid var(--border);color:var(--white);">📧 Send via Email</button>
+          <button class="submit-btn" onclick="sendViaSMS()" style="margin-top:.7rem;background:transparent;border:1px solid var(--border);color:var(--white);">💬 Send via SMS (Message)</button>
+          <p style="font-size:.76rem;color:var(--muted);margin-top:.6rem;text-align:center;">
+            No internet? A missed call to +91 79881 34257 works too — we'll call you back.
+          </p>
+        </div>
+
+        <p style="font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center;">
+          Tapping a button above opens WhatsApp or your call/email app with the details already filled in — you just need to tap Send there to complete it.
         </p>
       </div>
     </div>
@@ -869,7 +875,7 @@
   <div class="footer-logo">NAVIKA <span>HOME SOLUTIONS</span></div>
   <p>Electrical & mechanical instrument maintenance — Patti, Saifabad, Chanda, Dhakwa, Badlapur & nearby areas.</p>
   <p>© 2026 NAVIKA HOME SOLUTIONS. All rights reserved.</p>
-  <p style="margin-top:1rem;"><a href="#vendorLock" style="color:var(--muted);font-size:.72rem;text-decoration:none;">Vendor Directory</a></p>
+  <p style="margin-top:1rem;"><a href="#vendorLock" onclick="showVendorLock()" style="color:var(--muted);font-size:.72rem;text-decoration:none;">Vendor Directory</a></p>
 </footer>
 
 <!-- WhatsApp Float Button -->
@@ -902,6 +908,18 @@
   // --- Vendor & Directory password gate ---
   // To change the password, just edit the text between the quotes below.
   const VENDOR_PASSWORD = "navika2026";
+
+  function showVendorLock() {
+    document.getElementById('vendorLockWrap').style.display = 'flex';
+  }
+
+  function toggleMoreContact() {
+    const box = document.getElementById('moreContactOptions');
+    const btn = document.getElementById('moreContactToggle');
+    const isHidden = box.style.display === 'none';
+    box.style.display = isHidden ? 'block' : 'none';
+    btn.textContent = isHidden ? 'Fewer options ▴' : 'More contact options ▾';
+  }
 
   function unlockVendorSection() {
     document.getElementById('vendorLock').style.display = 'none';
